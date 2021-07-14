@@ -9,10 +9,7 @@ import { ProductsService } from './../../products/services/products.service';
 
 @Injectable()
 export class UsersService {
-  constructor(
-    private productsService: ProductsService,
-    private configService: ConfigService,
-  ) {}
+  constructor(private productsService: ProductsService, private configService: ConfigService) {}
 
   private counterId = 1;
   private users: User[] = [

@@ -1,4 +1,4 @@
-import { Module, HttpModule, HttpService } from '@nestjs/common';
+import { HttpModule, HttpService, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import * as Joi from 'joi';
 
@@ -33,9 +33,7 @@ import config from './config';
     {
       provide: 'TASKS',
       useFactory: async (http: HttpService) => {
-        const tasks = await http
-          .get('https://jsonplaceholder.typicode.com/todos')
-          .toPromise();
+        const tasks = await http.get('https://jsonplaceholder.typicode.com/todos').toPromise();
         return tasks.data;
       },
       inject: [HttpService],

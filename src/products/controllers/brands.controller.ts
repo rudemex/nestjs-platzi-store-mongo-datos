@@ -1,13 +1,4 @@
-import {
-  Controller,
-  Get,
-  Param,
-  Post,
-  Body,
-  Put,
-  Delete,
-  ParseIntPipe,
-} from '@nestjs/common';
+import { Controller, Get, Param, Post, Body, Put, Delete, ParseIntPipe } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 
 import { BrandsService } from '../services/brands.service';
@@ -34,10 +25,7 @@ export class BrandsController {
   }
 
   @Put(':id')
-  update(
-    @Param('id', ParseIntPipe) id: number,
-    @Body() payload: UpdateBrandDto,
-  ) {
+  update(@Param('id', ParseIntPipe) id: number, @Body() payload: UpdateBrandDto) {
     return this.brandsService.update(id, payload);
   }
 
