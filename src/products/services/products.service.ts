@@ -1,9 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model, FilterQuery } from 'mongoose';
+import { FilterQuery, Model } from 'mongoose';
 
-import { Product } from './../entities/product.entity';
-import { CreateProductDto, UpdateProductDto, FilterProductsDto } from './../dtos/products.dtos';
+import { Product } from '../entities/product.entity';
+import { CreateProductDto, FilterProductsDto, UpdateProductDto } from '../dtos/products.dtos';
 
 @Injectable()
 export class ProductsService {
