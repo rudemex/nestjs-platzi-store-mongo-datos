@@ -1,23 +1,18 @@
 import {
+  Body,
   Controller,
+  Delete,
   Get,
-  Query,
+  HttpCode,
+  HttpStatus,
   Param,
   Post,
-  Body,
   Put,
-  Delete,
-  HttpStatus,
-  HttpCode,
-  Res,
-  // ParseIntPipe,
+  Query,
 } from '@nestjs/common';
-import { Response } from 'express';
-import { ApiTags, ApiOperation } from '@nestjs/swagger';
-
-import { ParseIntPipe } from '../../common/parse-int.pipe';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { MongoIdPipe } from './../../common/mongo-id.pipe';
-import { CreateProductDto, UpdateProductDto, FilterProductsDto } from '../dtos/products.dtos';
+import { CreateProductDto, FilterProductsDto, UpdateProductDto } from '../dtos/products.dtos';
 import { ProductsService } from './../services/products.service';
 
 @ApiTags('products')

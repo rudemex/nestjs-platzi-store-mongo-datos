@@ -6,6 +6,7 @@ import { Product } from '../entities/product.entity';
 import { CreateProductDto, FilterProductsDto, UpdateProductDto } from '../dtos/products.dtos';
 
 @Injectable()
+//@UseInterceptors(ClassSerializerInterceptor)
 export class ProductsService {
   constructor(@InjectModel(Product.name) private productModel: Model<Product>) {}
 
