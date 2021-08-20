@@ -35,8 +35,8 @@ export class Product extends Document {
   @Prop({ type: SubDocSchema })
   subDoc: SubDoc;
 
-  @Prop({ type: [SubDocSchema] })
-  subDocs: Types.Array<SubDoc>;
+  @Prop({ type: Types.Array })
+  subDocs: SubDoc[];
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product);

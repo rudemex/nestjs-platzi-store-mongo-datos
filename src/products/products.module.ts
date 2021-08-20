@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
+//import { MongooseModule } from '@nestjs/mongoose';
+import { DatabaseModule } from '@td-nest-capabilities/database';
 
 import { ProductsController } from './controllers/products.controller';
 import { BrandsController } from './controllers/brands.controller';
@@ -12,7 +13,7 @@ import { Product, ProductSchema } from './entities/product.entity';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([
+    DatabaseModule.forFeature([
       {
         name: Product.name,
         schema: ProductSchema,
